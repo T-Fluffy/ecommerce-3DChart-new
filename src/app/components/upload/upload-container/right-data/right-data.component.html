@@ -1,0 +1,296 @@
+<script src="/src/app/components/upload/upload-container/upload.js"></script>
+<style src="/src/assets/css/upload.css"></style>
+<style src="/node_modules/font-awesome/css/font-awesome.min.css"></style>
+<div class="col-lg-3">
+  <div class="card position-sticky top-0" style="min-width: 250px; width: 100%">
+    <!-- Price estimated -->
+    <div class="p-1 bg-light bg-opacity-10">
+      <label class="form-label" style="font-size: 20px"> Price :</label>
+      <ul>
+        <li><i class="fa fa-lock fa-lg"> Secure payment</i></li>
+        <li><i class="fa fa-envelope"> Support from sellers</i></li>
+        <li>
+          <i class="fa fa-refresh fa-spin"></i>
+          Access to future versions
+        </li>
+      </ul>
+      <div>
+        <input
+          type="text"
+          id="PriceValue"
+          class="form-control"
+          style="width: 150px"
+        />
+        <label style="padding-left: 150px"
+          ><strong style="font-size: 30px">Dinar</strong></label
+        >
+      </div>
+    </div>
+    <!-- Platform -->
+    <div class="p-1 bg-light bg-opacity-10">
+      <hr class="my-1" />
+      <label class="form-label">Import in :</label>
+      <div style="margin-bottom: 3px">
+        <div class="p-0 bg-light bg-opacity-10">
+          <label
+            class="form-label"
+            style="font-size: 13px; padding-left: 130px"
+          >
+            Unity Engine
+          </label>
+          <div style="float: right">
+            <input
+              type="checkbox"
+              checked
+              data-toggle="toggle"
+              data-size="sm"
+              id="UnityCheked"
+            />
+          </div>
+        </div>
+        <div class="p-0 bg-light bg-opacity-10">
+          <label
+            class="form-label"
+            style="font-size: 13px; padding-left: 130px"
+          >
+            Unreal Engine
+          </label>
+          <div style="float: right">
+            <input
+              type="checkbox"
+              data-toggle="toggle"
+              data-size="sm"
+              id="UnrealCheked"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Geometry -->
+    <div class="p-1 bg-light bg-opacity-10">
+      <hr class="my-1" />
+      <label class="form-label"> Geometry :</label>
+      <div>
+        <label class="form-label" style="padding-left: 20px">
+          Triangles :</label
+        >
+        <input
+          type="text"
+          id="trianglesValue"
+          class="form-control"
+          style="margin-left: 20px; width: 200px"
+        />
+      </div>
+    </div>
+    <!-- Licence -->
+    <div class="p-1 bg-light bg-opacity-10">
+      <hr class="my-1" />
+      <label class="form-label" style="margin-right: 5%"> License :</label>
+      <div style="display: block">
+        <input type="file" id="Licence" />
+      </div>
+    </div>
+    <!-- Formats -->
+    <div class="p-1 bg-light bg-opacity-10">
+      <hr class="my-1" />
+      <label class="form-label"> Included 3D formats :</label><br />
+      <div style="margin-bottom: 3px">
+        <div class="p-0 bg-light bg-opacity-10">
+          <label class="form-label"
+            ><strong>Blender</strong><i style="font-size: 13px"> (blend)</i>
+          </label>
+          <div style="float: right">
+            <input
+              type="checkbox"
+              data-toggle="toggle"
+              data-size="sm"
+              id="Blender_OK"
+            />
+          </div>
+        </div>
+        <div class="p-0 bg-light bg-opacity-10">
+          <label class="form-label"
+            ><strong>GLTF</strong><i style="font-size: 13px"> (.gltf)</i>
+          </label>
+          <div style="float: right">
+            <input
+              type="checkbox"
+              data-toggle="toggle"
+              data-size="sm"
+              id="GLTF_OK"
+            />
+          </div>
+        </div>
+        <div class="p-0 bg-light bg-opacity-10">
+          <label class="form-label"
+            ><strong>USDZ</strong><i style="font-size: 13px"> (.usdz)</i></label
+          >
+          <div style="float: right">
+            <input
+              type="checkbox"
+              data-toggle="toggle"
+              data-size="sm"
+              id="USDZ_OK"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Vertices -->
+    <div class="p-1 bg-light bg-opacity-10">
+      <hr class="my-1" />
+      <label class="form-label"> Vertices :</label>
+      <input type="text" id="VerticesValue" class="form-control" />
+    </div>
+    <!-- PBR -->
+    <div class="p-1 bg-light bg-opacity-10">
+      <hr class="my-1" />
+      <label class="form-label"> PBR :</label>
+      <input type="text" id="PBRValue" class="form-control" />
+    </div>
+    <!-- Textures -->
+    <div class="p-1 bg-light bg-opacity-10">
+      <hr class="my-1" />
+      <label class="form-label"> Textures :</label>
+      <input type="text" id="TextureValue" class="form-control" />
+    </div>
+    <!-- Materials -->
+    <div class="p-1 bg-light bg-opacity-10">
+      <hr class="my-1" />
+      <label class="form-label"> Materials :</label>
+      <input type="text" id="MaterialsValue" class="form-control" />
+    </div>
+    <!-- Animations -->
+    <div class="p-1 bg-light bg-opacity-10">
+      <hr class="my-1" />
+      <label class="form-label"> Animations :</label>
+      <input type="text" id="AnimationsValue" class="form-control" />
+    </div>
+    <!-- Morph geometries -->
+    <div class="p-1 bg-light bg-opacity-10">
+      <hr class="my-1" />
+      <label class="form-label"> Morph geometries :</label>
+      <input type="text" id="MorphValue" class="form-control" />
+    </div>
+    <!-- UV Layers -->
+    <div class="p-2 bg-light bg-opacity-10">
+      <hr class="my-1" />
+      <label class="form-label"> UV Layers :</label>
+      <div style="margin-bottom: 3px">
+        <div class="p-0 bg-light bg-opacity-10">
+          <label class="form-label"> yes </label>
+          <div style="float: right">
+            <input
+              type="checkbox"
+              checked
+              data-toggle="toggle"
+              data-size="sm"
+              id="UVOK"
+            />
+          </div>
+        </div>
+        <div class="p-0 bg-light bg-opacity-10">
+          <label class="form-label"> no </label>
+          <div style="float: right">
+            <input
+              type="checkbox"
+              data-toggle="toggle"
+              data-size="sm"
+              id="NoUV"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Vertex colors -->
+    <div class="p-2 bg-light bg-opacity-10">
+      <hr class="my-1" />
+      <label class="form-label"> Vertex colors :</label>
+      <div style="margin-bottom: 3px">
+        <div class="p-0 bg-light bg-opacity-10">
+          <label class="form-label"> yes </label>
+          <div style="float: right">
+            <input
+              type="checkbox"
+              checked
+              data-toggle="toggle"
+              data-size="sm"
+              id="VertexOK"
+            />
+          </div>
+        </div>
+        <div class="p-0 bg-light bg-opacity-10">
+          <label class="form-label"> no </label>
+          <div style="float: right">
+            <input
+              type="checkbox"
+              data-toggle="toggle"
+              data-size="sm"
+              id="NOVertex"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Rigged geometries -->
+    <div class="p-2 bg-light bg-opacity-10">
+      <hr class="my-1" />
+      <label class="form-label"> Rigged geometries :</label>
+      <div style="margin-bottom: 3px">
+        <div class="p-0 bg-light bg-opacity-10">
+          <label class="form-label"> yes </label>
+          <div style="float: right">
+            <input
+              type="checkbox"
+              checked
+              data-toggle="toggle"
+              data-size="sm"
+              id="RiggedOK"
+            />
+          </div>
+        </div>
+        <div class="p-0 bg-light bg-opacity-10">
+          <label class="form-label"> no </label>
+          <div style="float: right">
+            <input
+              type="checkbox"
+              data-toggle="toggle"
+              data-size="sm"
+              id="NORigged"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Scale transformations -->
+    <div class="p-2 bg-light bg-opacity-10">
+      <hr class="my-1" />
+      <label class="form-label"> Scale transformations :</label>
+      <div style="margin-bottom: 3px">
+        <div class="p-0 bg-light bg-opacity-10">
+          <label class="form-label"> yes </label>
+          <div style="float: right">
+            <input
+              type="checkbox"
+              checked
+              data-toggle="toggle"
+              data-size="sm"
+              id="transformationsOK"
+            />
+          </div>
+        </div>
+        <div class="p-0 bg-light bg-opacity-10">
+          <label class="form-label"> no </label>
+          <div style="float: right">
+            <input
+              type="checkbox"
+              data-toggle="toggle"
+              data-size="sm"
+              id="NOtransformations"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

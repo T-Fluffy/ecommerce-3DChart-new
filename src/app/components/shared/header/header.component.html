@@ -1,0 +1,45 @@
+
+
+
+
+
+
+
+<div class="home-header">
+  <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px" fxlayoutalign="space-between center">
+    <div class="logo">
+        <a [routerLink]="['/home/one']" routerLinkActive="router-link-active" style="font-size: 200%;
+        color: black;
+        font-family: system-ui;"><strong>Chart3D</strong></a>
+    </div>
+    <div fxflexoffset.gt-sm="10"  fxFlex class="search-form">
+        <form class="search-form" fxLayout="row">
+          <div class="form-wrap">
+             <input type="text" placeholder="Type to search...">
+             <button class="btn-search" type="submit">Search</button>
+          </div>
+        </form>
+       </div>
+    <div class="call-bucket-wrap" fxLayout="row" fxLayout.sm="row" fxLayoutAlign="center center" >
+        <div class="info-message-icon"  fxLayout="row" fxLayoutAlign="center center">
+          <div class="icon"  fxLayout="row" >
+              <mat-icon class="mat-icon-lg mat-icon material-icons">call</mat-icon>
+          </div>
+            <div class="info-text">
+              <p>Helpline:</p>
+               <span>(+216) 94 542 535</span>
+            </div>
+        </div>
+        <div class="main-menu-wrapper-2" fxLayout="row" fxLayoutAlign="space-between center" >
+            <mat-toolbar class="top-navbar top menu">
+              <app-shopping-widgets [shoppingCartItems]="shoppingCartItems"></app-shopping-widgets>
+            </mat-toolbar>
+          </div>
+      </div>
+
+  </div>
+</div>
+<div class="menu-container1">
+    <app-menu></app-menu>
+</div>
+

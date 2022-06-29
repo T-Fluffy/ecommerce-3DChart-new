@@ -1,0 +1,83 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav [opened]="false" mode="over" #start class="sidenav">
+    <button mat-icon-button color="warn" class="close" (click)="start.close()">
+      <mat-icon color="warn">close</mat-icon>
+    </button>
+    <div class="divider"></div>
+    <div class="sidebar-items" fxLayout="column">
+      <app-sidebar *ngFor="let item of navItems" [item]="item"></app-sidebar>
+    </div>
+  </mat-sidenav>
+
+  <!--  <mat-toolbar class="main-topbar" [ngClass]="{topbar_four: url == '/home/four'}">
+        <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center" class="top-bar container" >
+                <span fxHide="false" fxHide.gt-sm   >
+                    <button mat-icon-button (click)="start.toggle()">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                 </span>
+               <div fxLayout="row" class="welcome-message">
+                <div class="widget-text">
+                  <a mat-button [matMenuTriggerFor]="currencyMenu" #currencyMenuTrigger="matMenuTrigger">
+                    {{currency}}<mat-icon class="mat-icon-sm caret cur-icon">arrow_drop_down</mat-icon>
+                  </a>
+                  <mat-menu #currencyMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="app-dropdown">
+                    <span>
+                        <button mat-menu-item *ngFor="let cur of currencies" (click)="changeCurrency(cur)">
+                            <span>{{cur}}</span>
+                        </button>
+                    </span>
+                </mat-menu>
+                </div>
+                <div class="widget-text">
+                  <a mat-button [matMenuTriggerFor]="langMenu" #langMenuTrigger="matMenuTrigger">
+                    <img [src]="flag.image" width="18">
+                    <span fxShow="false" fxShow.gt-sm class="flag-menu-title">{{flag.name}}</span>
+                    <mat-icon class="mat-icon-sm caret cur-icon">arrow_drop_down</mat-icon>
+                </a>
+                <mat-menu #langMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="app-dropdown">
+                    <span>
+                        <button mat-menu-item *ngFor="let flag of flags" (click)="changeLang(flag)">
+                            <img [src]="flag.image" width="18"> {{flag.name}}
+                        </button>
+                    </span>
+                </mat-menu>
+                </div>
+              </div> 
+              <div class="widgets-left" fxLayout="row">
+
+                <div class="widget-text">
+                  <a fxShow="false" fxShow.gt-xs [routerLink]="['/pages/wishlist']" routerLinkActive="router-link-active" ><mat-icon class="mat-icon-lg mat-icon material-icons mr-10">favorite_border</mat-icon> WISHLIST</a>
+                </div>
+                <div class="widget-text">
+                  <a fxShow="false" fxShow.gt-xs [routerLink]="['/pages/compare']" routerLinkActive="router-link-active" ><mat-icon>cached</mat-icon>COMPARE</a>
+                </div>
+                <div class="widget-text">
+                    <a fxShow="false" fxShow.gt-xs [routerLink]="['/pages/my-account']" routerLinkActive="router-link-active" ><mat-icon>person</mat-icon>My Account</a>
+                  </div> 
+              </div>
+        </mat-toolbar-row>
+      </mat-toolbar>-->
+
+  <app-header
+    *ngIf="
+      url == '/home/one' ||
+      (url == '/home/three' && url != '/home/two' && url != '/home/four') ||
+      router.url.includes('pages') ||
+      router.url.includes('products') ||
+      router.url.includes('blog') ||
+      router.url.includes('product') ||
+      router.url.includes('upload')
+    "
+  ></app-header>
+  <app-header-two *ngIf="url == '/home/two'"></app-header-two>
+  <app-header-three
+    *ngIf="url == '/home/four' || url == '/home/four'"
+  ></app-header-three>
+  <app-header-four
+    *ngIf="url == '/home/five' || url == '/home/five'"
+  ></app-header-four>
+  <router-outlet></router-outlet>
+  <app-footer *ngIf="url != '/home/five'"></app-footer>
+  <app-footer-two *ngIf="url == '/home/five'"></app-footer-two>
+</mat-sidenav-container>

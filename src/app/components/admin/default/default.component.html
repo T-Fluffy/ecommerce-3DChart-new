@@ -1,0 +1,8 @@
+<div>
+  <app-body
+    [collapsed]="isSideNavCollapsed"
+    [screenWidth]="screenWidth"
+    style="font-size: 48px"
+  ></app-body>
+  <app-sidenav (onToggleSideNav)="onToggleSideNav($event)"> </app-sidenav>
+</div>

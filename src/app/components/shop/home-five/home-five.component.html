@@ -1,0 +1,92 @@
+<div class="carousel-3">
+  <div class="container ctn-box"  >
+    <div class="" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+        <div class="carousel-2-wrapper" fxLayout.sm="column" fxFlex="100" fxFlex.gt-md="70" fxFlex.md="60" fxFlex.sm="100">
+            <app-main-carousel [slides]="slides"></app-main-carousel>
+        </div>
+        <div class="slider-categories" fxFlex="100" fxFlex.gt-md="30" fxFlex.md="40">
+           <div class="carousel-banners-wrapper" fxLayout="column">
+             <div *ngFor="let bn of discount" class="carousel-banner mb-15">
+                <div class="baner seccond">
+                    <div fxLayout="row" fxLayout.xs="column" class="info" >
+                      <div fxFlex="100" fxFlex.gt-md="50" class="bn-img"><img [src]="bn.image" alt=""> </div>
+                        <div fxFlex="100" fxFlex.gt-md="50" class="text-box w-50" fxLayout="column" >
+                            <h4>{{bn.title}}</h4>
+                           <p>{{bn.subtitle}}.</p>
+                    <a href="#">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+
+           </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="home-5-wrap">
+    <div class="container ">
+        <div class="categories-menu-wrap">
+
+               <app-categories-menu></app-categories-menu>
+
+          </div>
+          <div class="products sec-padding prod-five">
+              <h3>POPULAR ITEMS</h3>
+                    <mat-tab-group>
+
+                        <mat-tab  label="FEATURED PRODUCTS">
+
+                                 <app-product-carousel [product]="products | slice:0:8"></app-product-carousel>
+
+
+                        </mat-tab>
+
+                        <mat-tab label="LATEST PRODUCTS">
+
+                                <app-product-carousel [product]="products | slice:5:13"></app-product-carousel>
+
+                        </mat-tab>
+
+                        <mat-tab label="ON SALE PRODUCTS">
+
+                                  <app-product-carousel [product]="products | slice:13:22"></app-product-carousel>
+
+                        </mat-tab>
+
+                      </mat-tab-group>
+
+
+              </div>
+
+      </div>
+      <div class="categories sec-padding">
+        <div class="container">
+          <div class="title">
+              <h3>BROWSE</h3>
+          </div>
+
+            <app-categories-section></app-categories-section>
+        </div>
+        </div>
+
+        <div class="vertical-products">
+          <div class="container">
+
+              <app-product-vertical [products]="products"></app-product-vertical>
+
+          </div>
+        </div>
+        <div class="blog-section sec-padding bg">
+            <div class="container">
+
+                <app-blog-section></app-blog-section>
+
+            </div>
+          </div>
+</div>
+
+
+
+

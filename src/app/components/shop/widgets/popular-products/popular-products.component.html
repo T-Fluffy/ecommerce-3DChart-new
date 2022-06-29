@@ -1,0 +1,25 @@
+
+<div fxLayout="column" class="popular-products" ngClass.gt-md="m-0">
+    <div class="title-header">
+        <h4 class="title">POPULAR PRODUCTS</h4>
+    </div>
+      <mat-list class="reviews">
+         <mat-list-item class="content"  *ngFor="let product of products | slice:0:3">
+          <div class="media">  <a [routerLink]="['/home/left-sidebar/product', product.id]">
+              <img class="img-fluid" [src]="product.pictures[0].big" alt="">
+            </a>
+          </div>
+             <div class="info align-self-center">
+               <a [routerLink]="['/home/left-sidebar/product', product.id]"><h5>{{product.name}}</h5></a>
+               <div class="stars">
+                  <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                  <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                  <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                  <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                  <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+               </div>
+               <p class="price" *ngIf="!productsService?.catalogMode">{{product.price | currency:productsService?.currency:'symbol'}}</p>
+             </div>
+          </mat-list-item>
+      </mat-list>
+  </div>

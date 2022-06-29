@@ -1,0 +1,147 @@
+.form {
+    font-size: 1rem;
+}
+
+.form-label{
+    font-weight: 500;
+}
+
+.form textarea {
+    background: #F5F5F5;
+    border-color: #D8D8D8;
+    border-style: solid;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-width: 1px;
+    box-shadow: none;
+    display: inline-block;
+    max-width: 100%;
+    padding: 0.75rem;
+    -webkit-appearance: none;
+}
+
+.form textarea:focus {
+    background: #FFF;
+    border-color: #338EDA;
+    outline: 0;
+}
+
+.form textarea,
+.form .textarea {
+    min-height: 150px;
+}
+
+.form input[type=submit]:focus {
+    border: none;
+    outline: 0;
+}
+
+.form .textarea-tall {
+    min-height: 300px;
+}
+
+.form-stacked textarea {
+    display: block;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.form-block {
+    position: relative;
+}
+
+.form textarea {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.form-controls {
+    padding: 0 0.75rem;
+    color: black;
+    border-top: 1px solid #D8D8D8;
+    border-left: 1px solid #D8D8D8;
+    border-right: 1px solid #D8D8D8;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.form-controls .button {
+    padding: 0 1rem;
+    font-size: 1.125rem;
+}
+
+.form-controls .button:hover {
+    color: #338EDA;
+}
+
+.button {
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    min-height: 2rem;
+    line-height: 2rem;
+    font-size: 0.875em;
+    font-family: inherit;
+    text-decoration: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    padding: 0 0.75rem;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.note {
+    background: #D8D8D8;
+    font-size: 0.825rem;
+    width: 250px;
+    padding: 1.5rem;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    position: fixed;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    z-index: 100;
+}
+
+.note a {
+    color: #338EDA;
+}
+
+.row {
+    background: #eee;
+    padding: 1rem;
+}
+
+.card {
+    box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid rgba(0, 0, 0, .125);
+    border-radius: 1rem;
+}
+
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.5rem 1.5rem;
+}

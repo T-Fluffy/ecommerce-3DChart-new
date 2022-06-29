@@ -1,0 +1,30 @@
+<div class="banners-container" fxLayout="column" fxLayout.gt-sm="row" *ngIf="banners.length > 0">
+                <div class="baner seccond four" fxFlex [ngStyle]="getBgImage(1)">
+                    <div class="info" >
+                        <div class="text-box w-50" fxLayout="column" >
+                            <h4>{{getBanner(1).title}}</h4>
+                           <p>{{getBanner(1).subtitle}}</p>
+                    <a href="#">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="baner seccond pd-xs four" fxFlex [ngStyle]="getBgImage(2)">
+                    <div class="info" >
+                        <div class="text-box w-50" fxLayout="column" >
+                            <h4>{{getBanner(2).title}}</h4>
+                           <p>{{getBanner(2).subtitle}}</p>
+                    <a href="#">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="baner seccond pd-xs four" fxFlex [ngStyle]="getBgImage(2)">
+                        <div class="info" >
+                            <div class="text-box w-50" fxLayout="column" >
+                                <h4>{{getBanner(2).title}}</h4>
+                               <p>{{getBanner(2).subtitle}}</p>
+                        <a href="#">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+

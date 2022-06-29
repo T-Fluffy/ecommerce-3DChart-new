@@ -1,0 +1,162 @@
+<script src="/src/app/components/upload/upload-container/upload.js"></script>
+<style src="/src/assets/css/upload.css"></style>
+<div class="col-lg-6">
+  <div
+    class="card accordion bg-light"
+    id="accordionPayment"
+    style="padding: 1rem; padding: 1rem; min-width: 500px; width: 100%"
+  >
+    <div class="accordion-item mb-3">
+      <div
+        id="collapseCC"
+        class="accordion-collapse collapse show"
+        data-bs-parent="#accordionPayment"
+      >
+        <div class="accordion-body">
+          <div class="mb-3">
+            <label class="form-label">Title :</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder=""
+              id="ProjectTitle"
+            />
+          </div>
+          <div class="mb-3">
+            <div class="form form-stacked">
+              <div class="form-block">
+                <label class="form-label">Description :</label>
+                <div class="form-controls">
+                  <i class="bi bi-type-bold"></i>
+                  <i class="bi bi-type-italic"></i>
+                  <i class="bi bi-type-strikethrough"></i>
+                  <i class="bi bi-type-underline"></i>
+                  <i class="bi bi-paragraph"></i>
+                  <i class="bi bi-quote"></i>
+                  <i class="bi bi-blockquote-left"></i>
+                </div>
+                <textarea
+                  class="form-control"
+                  placeholder="Insert all the project informations here"
+                  class="textarea-tall"
+                  id="DescriptionContext"
+                  style="background-color: white"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Categires :</label>
+            <div style="border: 1px solid darkgray; background-color: white">
+              <div class="p-2 bg-light bg-opacity-10">
+                <div style="margin-bottom: 3px">
+                  <div class="p-0 bg-light bg-opacity-10">
+                    <label class="form-label">Game Asset </label>
+                    <div style="float: right">
+                      <input
+                        type="checkbox"
+                        checked
+                        data-toggle="toggle"
+                        data-size="sm"
+                        id="Game_Asset"
+                      />
+                    </div>
+                  </div>
+                  <div class="p-0 bg-light bg-opacity-10">
+                    <label class="form-label"> 3D print </label>
+                    <div style="float: right">
+                      <input
+                        type="checkbox"
+                        data-toggle="toggle"
+                        data-size="sm"
+                        id="print"
+                      />
+                    </div>
+                  </div>
+                  <div class="p-0 bg-light bg-opacity-10">
+                    <label class="form-label"> Material </label>
+                    <div style="float: right">
+                      <input
+                        type="checkbox"
+                        data-toggle="toggle"
+                        data-size="sm"
+                        id="Material"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Tags :</label> <br />
+            <div style="border: 1px solid darkgray; background-color: white">
+              <div class="p-2 bg-light bg-opacity-10">
+                <div style="margin-bottom: 3px">
+                  <div class="p-0 bg-light bg-opacity-10">
+                    <label class="form-label">#3D_model</label>
+                    <div style="float: right">
+                      <input
+                        type="checkbox"
+                        checked
+                        data-toggle="toggle"
+                        data-size="sm"
+                        id="#3D_model"
+                      />
+                    </div>
+                  </div>
+                  <div class="p-0 bg-light bg-opacity-10">
+                    <label class="form-label">#Material</label>
+                    <div style="float: right">
+                      <input
+                        type="checkbox"
+                        data-toggle="toggle"
+                        data-size="sm"
+                        id="#Material"
+                      />
+                    </div>
+                  </div>
+                  <div class="p-0 bg-light bg-opacity-10">
+                    <label class="form-label">#Animal</label>
+                    <div style="float: right">
+                      <input
+                        type="checkbox"
+                        data-toggle="toggle"
+                        data-size="sm"
+                        id="#Animal"
+                      />
+                    </div>
+                  </div>
+                  <div class="p-0 bg-light bg-opacity-10">
+                    <label class="form-label">#House</label>
+                    <div style="float: right">
+                      <input
+                        type="checkbox"
+                        data-toggle="toggle"
+                        data-size="sm"
+                        id="#House"
+                      />
+                    </div>
+                  </div>
+                  <div class="p-0 bg-light bg-opacity-10">
+                    <label class="form-label">#Objects</label>
+                    <div style="float: right">
+                      <input
+                        type="checkbox"
+                        data-toggle="toggle"
+                        data-size="sm"
+                        id="#Objects"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <label>load your project from here :</label><br />
+          <input type="file" id="project" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

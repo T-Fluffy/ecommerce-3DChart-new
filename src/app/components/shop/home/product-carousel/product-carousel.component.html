@@ -1,0 +1,39 @@
+    <div class="product-item swiper-container" [swiper]="config" >
+        <div class="swiper-wrapper h-100">
+            <div *ngFor="let product of product" class="swiper-slide">
+                <mat-card fxLayout="column">
+                    <div class="product-img">
+                        <a class="product-link" [routerLink]="['/home/product', product.id]">
+                          <img [src]="product.pictures[0].big" alt="">
+                       </a>
+                    </div>
+                     <div class="product-info-wrapper">
+                        <span class="category">{{product.category}}</span>
+                        <div class="title-wrap">
+                           <h4>{{product.name}}</h4>
+                        </div>
+                        <div class="stars">
+                           <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                           <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                           <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                           <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                           <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                        </div>
+                        <div class="price-wrap" fxLayout="row" fxLayoutAlign="space-between center">
+                         <p>${{product.price | number : '1.2-2'}}</p>
+                        <a (click)="addToCart(product)"><mat-icon class="mat-icon-lg mat-icon material-icons">shopping_cart</mat-icon></a>
+                        </div>
+                        <div class="icons" fxLayout="column">
+                           <a (click)="addToWishlist(product)"><mat-icon class="mat-icon-lg mat-icon material-icons mr-10">favorite_border</mat-icon></a>
+                           <a (click)="openProductDialog(product)"><mat-icon>remove_red_eye</mat-icon></a>
+                           <a (click)="addToCompare(product)"><mat-icon>cached</mat-icon></a>
+                         </div>
+                     </div>
+                  </mat-card>
+            </div>
+
+        </div>
+        <button mat-mini-fab class="swiper-button-prev swipe-arrow"><mat-icon>keyboard_arrow_left</mat-icon></button>
+        <button mat-mini-fab class="swiper-button-next swipe-arrow"><mat-icon>keyboard_arrow_right</mat-icon></button>
+      </div>
+

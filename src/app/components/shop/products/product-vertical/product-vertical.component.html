@@ -1,0 +1,79 @@
+<div class="vertical-products sec-padding">
+  <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start start" class="p-0">
+      <div fxFlex="100" fxFlex.gt-xs="33.3" class="product-panel">
+        <div class="widget-column">
+            <div class="title">
+                <h4 class="widget-title">3D Models</h4>
+              </div>
+              <ul class="product-list">
+                <li *ngFor="let product of products | slice:0:3 " fxLayout="row">
+                  <div class="media-image">
+                    <a [routerLink]="['/home/product', product.id]"><img [src]="product.pictures[0].big" class="small" alt=""> </a>
+                  </div>
+                  <div class="media-body">
+                    <a [routerLink]="['/home/product', product.id]"><span>{{product.name}}</span></a>
+                    <div class="stars">
+                        <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                        <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                        <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                        <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                        <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                     </div>
+                     <p class="price">{{product.price | number : '1.2-2' }}</p>
+                  </div>
+                </li>
+              </ul>
+        </div>
+      </div>
+      <div fxFlex="100" fxFlex.gt-xs="33.3" class="product-panel">
+          <div class="widget-column">
+              <div class="title">
+                  <h4 class="widget-title">Materials</h4>
+                </div>
+                <ul class="product-list">
+                  <li *ngFor="let product of products | slice:6:9 " fxLayout="row">
+                    <div class="media-image">
+                      <a [routerLink]="['/home/product', product.id]"><img [src]="product.pictures[0].big" class="small" alt=""> </a>
+                    </div>
+                    <div class="media-body">
+                      <a [routerLink]="['/home/product', product.id]"><span>{{product.name}}</span></a>
+                      <div class="stars">
+                          <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                          <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                          <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                          <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                          <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                       </div>
+                       <p class="price">{{product.price | number : '1.2-2'}}</p>
+                    </div>
+                  </li>
+                </ul>
+          </div>
+        </div>
+        <div fxFlex="100" fxFlex.gt-xs="33.3" class="product-panel">
+            <div class="widget-column">
+                <div class="title">
+                    <h4 class="widget-title">Assets</h4>
+                  </div>
+                  <ul class="product-list">
+                    <li *ngFor="let product of products | slice:9:12 " fxLayout="row">
+                      <div class="media-image">
+                        <a ><img [routerLink]="['/home/product', product.id]" [src]="product.pictures[0].big" class="small" alt=""> </a>
+                      </div>
+                      <div class="media-body">
+                       <a [routerLink]="['/home/product', product.id]"><span>{{product.name}}</span></a>
+                        <div class="stars">
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                            <mat-icon class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                         </div>
+                         <p class="price">{{product.price | number : '1.2-2'}}</p>
+                      </div>
+                    </li>
+                  </ul>
+            </div>
+          </div>
+  </div>
+</div>

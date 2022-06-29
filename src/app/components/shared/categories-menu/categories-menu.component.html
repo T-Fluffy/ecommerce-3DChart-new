@@ -1,0 +1,28 @@
+<div class="category-contant">
+  <ul
+    fxLayout="row"
+    fxLayout.lt-sm="column"
+    fxLayoutAlign="space-evenly center"
+  >
+    <li fxLayout="column">
+      <a class="no-brd" [routerLink]="['/home/products/all']"
+        ><i class="material-icons">Show All</i></a
+      >
+    </li>
+    <li fxLayout="column">
+      <a [routerLink]="['/home/products/3DModels']"
+        ><i class="material-icons">3DModels</i></a
+      >
+    </li>
+    <li fxLayout="column">
+      <a [routerLink]="['/home/products/Materials']"
+        ><i class="material-icons">Materials</i></a
+      >
+    </li>
+    <li>
+      <a [routerLink]="['/home/products/Assets']"
+        ><i class="material-icons">Assets</i></a
+      >
+    </li>
+  </ul>
+</div>

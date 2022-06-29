@@ -1,0 +1,78 @@
+<div
+  class="banners-container"
+  fxLayout="column"
+  fxLayout.gt-sm="row"
+  *ngIf="banners.length > 0"
+>
+  <div
+    class="sec-padding"
+    fxLayout="row"
+    fxLayout.gt-sm="column"
+    fxLayout.xs="column"
+    fxFlex="100"
+    fxFlex.gt-sm="100"
+    class="baners"
+  >
+    <div class="baner first" [ngStyle]="getBgImage(0)">
+      <div class="info">
+        <div class="text-box">
+          <h4>{{ getBanner(0).title }}</h4>
+          <p>{{ getBanner(0).subtitle }}</p>
+          <a href="#">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    fxLayout="row"
+    fxLayout.gt-sm="column"
+    fxLayout.xs="column"
+    fxFlex="100"
+    fxFlex.gt-sm="60"
+  >
+    <div
+      class="bn-wrap"
+      fxLayout="column"
+      fxLayout.gt-sm="row"
+      fxFlexOrder="2"
+      fxFlexOrder.gt-sm="1"
+      fxFlex="50"
+      fxFlex.gt-sm="33"
+    >
+      <div class="baner seccond" fxFlex [ngStyle]="getBgImage(1)">
+        <div class="info">
+          <div class="text-box w-50" fxLayout="column">
+            <h4>{{ getBanner(1).title }}</h4>
+            <p>{{ getBanner(1).subtitle }}</p>
+            <a href="#">Shop Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="baner seccond pd-xs" fxFlex [ngStyle]="getBgImage(2)">
+        <div class="info">
+          <div class="text-box w-50" fxLayout="column">
+            <h4>{{ getBanner(2).title }}</h4>
+            <p>{{ getBanner(2).subtitle }}</p>
+            <a href="#">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="baner seccond mg-xs-0"
+      fxFlexOrder="1"
+      fxFlexOrder.gt-sm="2"
+      fxFlex="50"
+      fxFlex.gt-sm="100"
+      [ngStyle]="getBgImage(3)"
+    >
+      <div class="info">
+        <div class="text-box w-50 pt-40" fxLayout="column">
+          <h4 class="big-title">{{ getBanner(3).title }}</h4>
+          <p>{{ getBanner(3).subtitle }}</p>
+          <a href="#" class="big-price">50Dt</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

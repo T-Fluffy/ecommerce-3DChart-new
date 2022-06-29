@@ -1,0 +1,516 @@
+<div class="container">
+  <div class="details-wrapper sec-padding">
+    <div fxLayout="column" fxFlex="100" fxFlex.gt-sm="80">
+      <div
+        fxLayout="row wrap"
+        fxFlex="100"
+        fxFlex.gt-md="100"
+        fxFlex.gt-sm="100"
+      >
+        <div fxFlex="100" fxFlex.gt-md="50" fxFlex.md="45">
+          <!-- <mat-card class="product-image">
+                     <div *ngFor="let image of product.pictures">
+                        <ngx-image-zoom   [thumbImage]="image" [fullImage]="image" zoomMode="hover"
+                    ></ngx-image-zoom>
+                     </div>
+                </mat-card> -->
+          <mat-card class="product-image">
+            <div>
+              <button mat-icon-button fxHide="false" fxHide.gt-md>
+                <mat-icon>fullscreen</mat-icon>
+              </button>
+              <app-asset></app-asset>
+            </div>
+            <a
+              (click)="openProductDialog(product, bigProductImageIndex)"
+              style="cursor: pointer"
+            >
+              <mat-icon>zoom_in</mat-icon></a
+            >
+          </mat-card>
+
+          <div class="small-carousel">
+            <div class="swiper-container" [swiper]="config">
+              <div class="swiper-wrapper">
+                <div
+                  *ngFor="let image of product?.pictures; let i = index"
+                  class="swiper-slide"
+                >
+                  <mat-card (click)="selectImage(i)" class="p-1">
+                    <img [src]="image.small" class="swiper-lazy" />
+                    <div class="swiper-lazy-preloader"></div>
+                  </mat-card>
+                </div>
+              </div>
+              <button mat-icon-button class="swiper-button-prev swipe-arrow">
+                <mat-icon>keyboard_arrow_left</mat-icon>
+              </button>
+              <button mat-icon-button class="swiper-button-next swipe-arrow">
+                <mat-icon>keyboard_arrow_right</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          fxFlex="100"
+          fxFlex.gt-md="50"
+          fxFlex.md="55"
+          ngClass.gt-sm="px-3 m-0"
+          ngClass.sm="mt-2"
+          ngClass.xs="mt-2"
+        >
+          <div class="product-right">
+            <div class="product-details">
+              <h2>{{ product.name }}</h2>
+              <h4 *ngIf="!productsService?.catalogMode">
+                <del>{{
+                  product.salePrice
+                    | currency: productsService?.currency:"symbol"
+                }}</del
+                ><span>{{ product.discount }}% off</span>
+              </h4>
+              <h3 class="price" *ngIf="!productsService?.catalogMode">
+                {{
+                  product.price | currency: productsService?.currency:"symbol"
+                }}
+              </h3>
+              <p class="text-muted description">{{ product.description }}</p>
+            </div>
+            <div class="py-1 mt-15">
+              <p>
+                <span class="text-muted fw-500">Avalibility: </span>
+                <span class="avalibility" *ngIf="counter <= product.stock"
+                  ><span>In Stock</span></span
+                >
+                <span class="avalibility" *ngIf="counter > product.stock"
+                  ><span>Out of Stock</span></span
+                >
+              </p>
+            </div>
+            <div class="quantity">
+              <span class="text-muted fw-500">Quantity</span>
+              <div fxLayout="row" fxLayout.xs="column" class="text-muted">
+                <div fxLayout="row" fxLayoutAlign="center start">
+                  <button
+                    mat-icon-button
+                    matTooltip="Remove"
+                    (click)="decrement()"
+                  >
+                    <mat-icon>remove</mat-icon>
+                  </button>
+                  <input
+                    type="text"
+                    name="quantity"
+                    value="{{ counter }}"
+                    class="form-control input-number"
+                  />
+                  <button
+                    mat-icon-button
+                    matTooltip="Add"
+                    (click)="increment()"
+                  >
+                    <mat-icon>add</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="buttons mt-20">
+              <button
+                mat-raised-button
+                color="primary"
+                class="btn-project mr-10"
+                (click)="addToCart(product, counter)"
+              >
+                ADD TO CARD
+              </button>
+              <button
+                mat-raised-button
+                color="primary"
+                class="btn-project"
+                (click)="buyNow(product, counter)"
+              >
+                BUY NOW
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-wrapper" fxFlex="100" fxFlex.md="75">
+        <mat-card>
+          <mat-tab-group [@.disabled]="true" [selectedIndex]="0">
+            <mat-tab label="Description">
+              <div class="full-desc lh">
+                <p class="text-muted">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industrys
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged. It was popularised in the 1960s with
+                  the release of Letraset sheets containing Lorem Ipsum
+                  passages, and more recently with desktop publishing software
+                  like Aldus PageMaker including versions of Lorem Ipsum. Lorem
+                  Ipsum is simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been the industrys standard dummy
+                  text ever since the 1500s, when an unknown printer took a
+                  galley of type and scrambled it to make a type specimen book.
+                  It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged.
+                  It was popularised in the 1960s with the release of Letraset
+                  sheets containing Lorem Ipsum passages, and more recently with
+                  desktop publishing software like Aldus PageMaker including
+                  versions of Lorem Ipsum.
+                </p>
+              </div>
+            </mat-tab>
+            <mat-tab label="Details">
+              <div class="full-desc lh text-muted">
+                <p>
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                  occaecat cupidatat non proident, sunt in culpa qui officia
+                  deserunt mollit anim id est laborum.
+                </p>
+                <ul class="px-2 mt-1">
+                  <li>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </li>
+                  <li>
+                    Aenean vehicula, tortor gravida elementum tincidunt, justo
+                    lorem vestibulum ex, eget egestas arcu tellus in magna.
+                    Vivamus gravida, ipsum vel luctus luctus, nisi felis
+                    vestibulum est, nec interdum tellus leo quis tellus. Sed sit
+                    amet convallis enim, in laoreet orci.
+                  </li>
+                  <li>
+                    Donec et elit at nulla congue interdum sit amet varius erat.
+                  </li>
+                  <li>
+                    Nulla sit amet risus pellentesque, dignissim massa ut,
+                    dignissim arcu.
+                  </li>
+                  <li>
+                    Morbi dapibus ligula at faucibus tempus. Aenean vehicula,
+                    tortor gravida elementum tincidunt, justo lorem vestibulum
+                    ex, eget egestas arcu tellus in magna. Vivamus gravida,
+                    ipsum vel luctus luctus, nisi felis vestibulum est, nec
+                    interdum tellus leo quis tellus. Sed sit amet convallis
+                    enim, in laoreet orci.
+                  </li>
+                  <li>
+                    Nunc sodales justo ut nisi euismod, quis condimentum leo
+                    varius.
+                  </li>
+                </ul>
+              </div>
+            </mat-tab>
+            <mat-tab label="Reviews">
+              <div class="full-desc lh">
+                <mat-list class="reviews">
+                  <mat-list-item class="content">
+                    <img
+                      matListAvatar
+                      [src]="'assets/images/avatars/avatar-1.png'"
+                      alt="image"
+                      class="review-author"
+                    />
+
+                    <p matLine class="text">
+                      Integer id eros et mi fringilla imperdiet. In dictum
+                      turpis eget magna viverra condimentum. Ut malesuada
+                      interdum ultrices. Proin tristique sem pellentesque,
+                      posuere dui in, maximus magna. Aenean vehicula, tortor
+                      gravida elementum tincidunt, justo lorem vestibulum ex,
+                      eget egestas arcu tellus in magna.
+                    </p>
+                  </mat-list-item>
+                  <mat-list-item class="content">
+                    <img
+                      matListAvatar
+                      [src]="'assets/images/avatars/avatar-2.png'"
+                      alt="image"
+                      class="review-author"
+                    />
+                    <p matLine class="text">
+                      Nulla accumsan, lacus sed suscipit rutrum, turpis augue
+                      accumsan metus, in accumsan urna mi vehicula lorem.
+                      Pellentesque semper nibh vitae augue placerat finibus.
+                      Nulla sed porttitor nunc, quis tristique sem. Quisque in
+                      varius nisl. Integer turpis lorem, ultricies sed sem nec,
+                      commodo molestie arcu. Nulla finibus ex tortor, et
+                      suscipit magna semper consectetur. Cras sit amet metus
+                      dui. Maecenas eget dui at ex varius malesuada vel non
+                      felis.
+                    </p>
+                  </mat-list-item>
+                  <mat-list-item class="content">
+                    <img
+                      matListAvatar
+                      [src]="'assets/images/avatars/avatar-3.png'"
+                      alt="image"
+                      class="review-author"
+                    />
+                    <p matLine class="text">
+                      Pellentesque hendrerit vel turpis aliquam placerat.
+                      Suspendisse ullamcorper congue feugiat. Etiam gravida
+                      metus ac massa posuere venenatis. Pellentesque vehicula
+                      lobortis dolor, ac pretium dolor maximus quis. Fusce vitae
+                      iaculis mauris, quis posuere ex. Mauris vitae convallis
+                      nibh. Etiam eget enim at orci interdum maximus nec in
+                      ante.
+                    </p>
+                  </mat-list-item>
+                </mat-list>
+                <div class="writte-reviews mt-40">
+                  <h3 class="mt-2">LEAVE YOUR REVIEW</h3>
+                  <div class="divider"></div>
+                  <p class="mt-2 text-muted">
+                    Your email address will not be published. Required fields
+                    are marked *
+                  </p>
+                  <h3 fxLayoutAlign="start center" class="mt-2">
+                    <span>Your Rating:</span>
+                    <button
+                      mat-icon-button
+                      matTooltip="Very Dissatisfied"
+                      matTooltipPosition="above"
+                    >
+                      <mat-icon class="mat-icon-lg"
+                        >sentiment_very_dissatisfied</mat-icon
+                      >
+                    </button>
+                    <button
+                      mat-icon-button
+                      matTooltip="Dissatisfied"
+                      matTooltipPosition="above"
+                    >
+                      <mat-icon class="mat-icon-lg"
+                        >sentiment_dissatisfied</mat-icon
+                      >
+                    </button>
+                    <button
+                      mat-icon-button
+                      matTooltip="Neutral"
+                      matTooltipPosition="above"
+                    >
+                      <mat-icon class="mat-icon-lg">sentiment_neutral</mat-icon>
+                    </button>
+                    <button
+                      mat-icon-button
+                      matTooltip="Satisfied"
+                      matTooltipPosition="above"
+                    >
+                      <mat-icon class="mat-icon-lg"
+                        >sentiment_satisfied</mat-icon
+                      >
+                    </button>
+                    <button
+                      mat-icon-button
+                      matTooltip="Very Satisfied"
+                      matTooltipPosition="above"
+                    >
+                      <mat-icon class="mat-icon-lg"
+                        >sentiment_very_satisfied</mat-icon
+                      >
+                    </button>
+                  </h3>
+                  <form fxLayout="row wrap">
+                    <div
+                      fxFlex="100"
+                      fxFlex.gt-md="50"
+                      fxFlex.md="50"
+                      class="mt-20 pr-5"
+                      ngClass.sm="mt-10"
+                      ngClass.xs="mt-10"
+                    >
+                      <mat-form-field class="w-100">
+                        <input
+                          matInput
+                          placeholder="Your Name (required)"
+                          #name="ngModel"
+                          ngModel
+                          name="name"
+                          required
+                        />
+                        <mat-error *ngIf="name.invalid"
+                          >Please enter a valid message</mat-error
+                        >
+                      </mat-form-field>
+                    </div>
+                    <div
+                      fxFlex="100"
+                      fxFlex.gt-md="50"
+                      fxFlex.md="50"
+                      class="pl-5 mt-20"
+                      ngClass.sm="mt-10"
+                      ngClass.xs="mt-10"
+                    >
+                      <mat-form-field class="w-100">
+                        <input
+                          matInput
+                          placeholder="Your Email (required)"
+                          #email="ngModel"
+                          ngModel
+                          name="email"
+                          required
+                        />
+                        <mat-error *ngIf="email.invalid"
+                          >Please enter a valid message</mat-error
+                        >
+                      </mat-form-field>
+                    </div>
+                    <div
+                      fxFlex="100"
+                      fxFlex.gt-sm="100"
+                      class="mt-20"
+                      ngClass.sm="mt-10"
+                      ngClass.xs="mt-10"
+                    >
+                      <mat-form-field class="w-100">
+                        <input
+                          matInput
+                          placeholder="Subject"
+                          #subject="ngModel"
+                          ngModel
+                          name="subject"
+                          required
+                        />
+                        <mat-error *ngIf="subject.invalid"
+                          >Please enter a valid message</mat-error
+                        >
+                      </mat-form-field>
+                    </div>
+                    <div
+                      fxFlex="100"
+                      fxFlex.gt-sm="100"
+                      class="mt-20"
+                      ngClass.sm="mt-10"
+                      ngClass.xs="mt-10"
+                    >
+                      <mat-form-field class="w-100">
+                        <textarea
+                          placeholder="Post content"
+                          matInput
+                          rows="6"
+                          ngModel
+                          name="content"
+                          required
+                        ></textarea>
+                      </mat-form-field>
+                    </div>
+                    <div
+                      class="button-wrap"
+                      fxFlex="100"
+                      fxFlex.gt-sm="100"
+                      class="px-1"
+                      ngClass.sm="mt-1"
+                      ngClass.xs="mt-1"
+                    >
+                      <button
+                        class="btn-project"
+                        mat-raised-button
+                        color="accent"
+                        type="submit"
+                      >
+                        Submit Review
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+        </mat-card>
+      </div>
+
+      <div class="products sec-padding">
+        <div class="title">
+          <h4 class="widget-title">Featured Products</h4>
+        </div>
+        <app-product-carousel-three
+          [product]="products | slice: 0:6"
+        ></app-product-carousel-three>
+      </div>
+    </div>
+    <div fxLayout="row wrap" fxHide fxShow.gt-sm fxFlex="100" fxFlex.gt-sm="22">
+      <div fxFlex="100">
+        <div fxLayout="row wrap" class="info-bar" ngClass.gt-md="m-0">
+          <div fxFlex="100">
+            <!-- <mat-card
+              class="light-block"
+              fxLayout="row"
+              fxLayoutAlign="start center"
+            >
+              <mat-icon class="mat-icon-xlg m-0">card_giftcard</mat-icon>
+              <div class="content ml-10">
+                <p>BONUS PLUS</p>
+                <span class="text-muted m-0"
+                  >Get a bonus plus for buying more that three products</span
+                >
+              </div>
+            </mat-card>
+          --></div>
+          <div fxFlex="100">
+            <!--
+            <mat-card
+              class="light-block"
+              fxLayout="row"
+              fxLayoutAlign="start center"
+            >
+              <mat-icon class="mat-icon-xlg m-0">local_shipping</mat-icon>
+              <div class="content ml-10">
+                <p>FREE SHIPPING</p>
+                <span class="text-muted m-0"
+                  >Free shipping on all orders over 90 Dt</span
+                >
+              </div>
+            </mat-card>
+          --></div>
+          <div fxFlex="100" class="mt-16">
+            <mat-card
+              class="light-block"
+              fxLayout="row"
+              fxLayoutAlign="start center"
+            >
+              <mat-icon class="mat-icon-xlg m-0">monetization_on</mat-icon>
+              <div class="content ml-10">
+                <p>MONEY BACK GUARANTEE</p>
+                <span class="text-muted m-0">100% money back guarantee</span>
+              </div>
+            </mat-card>
+          </div>
+          <div fxFlex="100" class="mt-16">
+            <mat-card
+              class="light-block no-border"
+              fxLayout="row"
+              fxLayoutAlign="start center"
+            >
+              <mat-icon class="mat-icon-xlg m-0">history</mat-icon>
+              <div class="content ml-10">
+                <p>ONLINE SUPPORT 24/7</p>
+                <span class="text-muted m-0">Call us: 02 3555 65454 55</span>
+              </div>
+            </mat-card>
+          </div>
+        </div>
+        <div class="sale-widget">
+          <span class="sale-widget1"> BIG SALLE </span>
+          <span class="sale-widget2"> DO NOT MISS IT! </span>
+          <span class="discount">60</span>
+          <div class="percent"><span>%</span>off</div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+            nects.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="py-2 mt-2">
+       <h2>Related Products</h2>
+       <div class="divider"></div>
+       <app-products-carousel [products]="relatedProducts"></app-products-carousel>
+       </div> -->
+</div>

@@ -1,0 +1,184 @@
+<div class="carousel-3">
+    <div class="container ctn-box"  >
+      <div class="" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+          <div class="carousel-2-wrapper" fxLayout.sm="column" fxFlex="100" fxFlex.gt-md="70" fxFlex.md="60" fxFlex.sm="100">
+              <app-main-carousel [slides]="slides"></app-main-carousel>
+          </div>
+          <div class="slider-categories" fxFlex="100" fxFlex.gt-md="30" fxFlex.md="40">
+             <div class="carousel-banners-wrapper" fxLayout="column">
+               <div *ngFor="let bn of discount" class="carousel-banner mb-15">
+                  <div class="baner seccond">
+                      <div fxLayout="row" fxLayout.xs="column" class="info" >
+                        <div fxFlex="100" fxFlex.gt-md="50" class="bn-img"><img [src]="bn.image" alt=""> </div>
+                          <div fxFlex="100" fxFlex.gt-md="50" class="text-box w-50" fxLayout="column" >
+                              <h4>{{bn.title}}</h4>
+                             <p>{{bn.subtitle}}.</p>
+                      <a href="#">Shop Now</a>
+                          </div>
+                      </div>
+                  </div>
+               </div>
+
+             </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="home-3-wrap">
+      <div class="container ">
+        <div class="home-main-wrapper" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+          <div fxFlex="100" fxFlex.gt-md="23" fxFlex.md="40" class="home3-sidebar">
+              <div class="categories-wrap" >
+                  <div class="title"> TOP CATEGORIES</div>
+                    <app-categories></app-categories>
+                    <div class="btn-sale">
+                        <button mat-raised-button color="primary">USE THE DISCOUNT - 60% OFF</button>
+                    </div>
+               </div>
+               <div class="brands">
+                  <div  class="title-header"><h4  class="title">BRANDS</h4></div>
+                  <div class="brand-logos">
+                    <div class="brand-item">
+                      <a href="#">
+                        <img src="assets/images/brands/brand-1.png" alt="">
+                      </a>
+                    </div>
+                    <div class="brand-item">
+                        <a href="#">
+                          <img src="assets/images/brands/brand-2.png" alt="">
+                        </a>
+                      </div>
+                      <div class="brand-item">
+                          <a href="#">
+                            <img src="assets/images/brands/brand-3.png" alt="">
+                          </a>
+                        </div>
+                        <div class="brand-item">
+                            <a href="#">
+                              <img src="assets/images/brands/brand-4.png" alt="">
+                            </a>
+                          </div>
+                          <div class="brand-item">
+                              <a href="#">
+                                <img src="assets/images/brands/brand-5.png" alt="">
+                              </a>
+                            </div>
+                            <div class="brand-item">
+                                <a href="#">
+                                  <img src="assets/images/brands/brand-1.png" alt="">
+                                </a>
+                              </div>
+                  </div>
+               </div>
+               <div class="sale-widget">
+                   <span class="sale-widget1">
+                       BIG SALLE
+                   </span>
+                   <span class="sale-widget2">
+                      DO NOT MISS IT!
+                  </span>
+                   <span class="discount">60</span>
+                   <div class="percent">
+                     <span>%</span>off
+                   </div>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nects.</p>
+               </div>
+               <div class="subscribe-widget">
+                  <span>NEWSLETTER</span>
+                  <p>Get all the latest information on Events, Sales and Offers.</p>
+                  <div class="form">
+                      <div fxLayout="column" class="newsletter-widget">
+                          <input type="text" placeholder="Enter your email address">
+                          <button type="submit" class="ped-btn-footer">SUBSCRIBE US</button>
+                        </div>
+                  </div>
+               </div>
+            </div>
+                <div fxFlex="100"   fxFlex.gt-md="77" fxFlex.md="60" fxFlex.sm="100" class="main-home3-wrapper">
+                  <div fxLayout="row wrap" class="info-bar pb-0">
+                    <div class="card-wrap" fxFlex="100" fxFlex.gt-md="25" fxFlex.gt-xs="50">
+                      <mat-card class="light-block" fxLayout="row"  fxLayoutAlign="start center">
+                        <mat-icon class="mat-icon-xlg  m-0">card_giftcard</mat-icon>
+                        <div class="content">
+                          <p>BONUS PLUS</p>
+                          <span class="text-muted m-0">Get a bonus plus for buying more that three products</span>
+                        </div>
+                      </mat-card>
+                    </div>
+                    <div class="card-wrap" fxFlex="100" fxFlex.gt-md="25" fxFlex.gt-xs="50">
+                      <mat-card class="light-block" fxLayout="row"  fxLayoutAlign="start center">
+                        <mat-icon class="mat-icon-xlg  m-0">local_shipping</mat-icon>
+                        <div class="content">
+                          <p>FREE SHIPPING</p>
+                          <span class="text-muted m-0">Free shipping on all orders over $99</span>
+                        </div>
+                      </mat-card>
+                    </div>
+                    <div class="card-wrap" fxFlex="100" fxFlex.gt-md="25" fxFlex.gt-xs="50">
+                      <mat-card class="light-block" fxLayout="row"  fxLayoutAlign="start center">
+                        <mat-icon class="mat-icon-xlg m-0">monetization_on</mat-icon>
+                        <div class="content">
+                          <p>MONEY BACK GUARANTEE</p>
+                          <span class="text-muted m-0">100% money back guarantee</span>
+                        </div>
+                      </mat-card>
+                    </div>
+                    <div class="card-wrap" fxFlex="100" fxFlex.gt-md="25" fxFlex.gt-xs="50">
+                      <mat-card class="light-block" fxLayout="row"  fxLayoutAlign="start center">
+                        <mat-icon class="mat-icon-xlg m-0">history</mat-icon>
+                        <div class="content">
+                          <p>ONLINE SUPPORT 24/7</p>
+                          <span class="text-muted m-0">Call us: 02 3555 65454 55</span>
+                        </div>
+                      </mat-card>
+                    </div>
+                  </div>
+                  <div class="products sec-padding prod-three">
+                    <h3>POPULAR ITEMS</h3>
+                          <mat-tab-group>
+
+                              <mat-tab  label="FEATURED PRODUCTS">
+
+                                       <app-product-carousel-three [product]="products | slice:0:8"></app-product-carousel-three>
+
+
+                              </mat-tab>
+
+                              <mat-tab label="LATEST PRODUCTS">
+
+                                      <app-product-carousel-three [product]="products | slice:5:13"></app-product-carousel-three>
+
+                              </mat-tab>
+
+                              <mat-tab label="ON SALE PRODUCTS">
+
+                                        <app-product-carousel-three [product]="products | slice:13:22"></app-product-carousel-three>
+
+                              </mat-tab>
+
+                            </mat-tab-group>
+
+
+                    </div>
+                    <div class="home3-banner-wrap">
+                        <div class="banner">
+                          <div fxLayout="column" class="text-wrap">
+                              <span class="subtitle">CHECK THE PURE QUALITY</span>
+                              <span class="main">EXCLUSIVE CLASS</span>
+                              <a href="#">Shop Now</a>
+                          </div>
+
+                          <img src="assets/images/bg/hom3-banner.jpg" alt="">
+                        </div>
+                    </div>
+                    <app-product-vertical [products]="products"></app-product-vertical>
+                </div>
+         </div>
+        </div>
+  </div>
+
+
+
+
+
+

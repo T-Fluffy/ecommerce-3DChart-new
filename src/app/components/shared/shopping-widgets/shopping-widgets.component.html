@@ -1,0 +1,48 @@
+
+  <div class="commerce-buttons" fxLayout="row" fxLayoutAlign="end center">
+
+    <button mat-button class="flex-row-button mat-button" fxLayoutAlign="space-between center" [matMenuTriggerFor]="menu">
+      <div class="mat-button-wrapper">
+          <div class="" >
+              <mat-icon class="mat-icon-lg mat-icon material-icons">local_grocery_store</mat-icon>
+              <span class="cart-count-wrapper">{{shoppingCartItems.length}}</span>
+            </div>
+            <div class="top-cart">
+                <span>{{ getTotal() | async | currency:productService?.currency:'symbol' }}</span>
+            </div>
+      </div>
+    </button>
+    <mat-menu class="spCard-main"  #menu="matMenu">
+      <div class="spCard-dropdown">
+        <div class="card-list-title" fxLayout="row" fxLayoutAlign="space-between start">
+           <a [routerLink]="['/pages/cart']" routerLinkActive="router-link-active" ><p>CHECK CARD</p></a>
+            <p>{{shoppingCartItems.length}} ITEM</p>
+        </div>
+            <mat-divider></mat-divider>
+            <p class="woo-message" *ngIf="!shoppingCartItems.length">Please add product<p>
+
+            <div class="new-product" fxLayout="column" *ngIf="shoppingCartItems.length">
+              <div class="item" fxLayout="row" fxLayoutAlign="start start" *ngFor="let item of shoppingCartItems">
+                  <div class="product">
+                      <img [src]="item.product.pictures[0].small" alt="">
+                     </div>
+                    <div class="desc">
+                      <p>{{item.product.name}}</p>
+                      <span>{{item.quantity}} X {{item.product.price}}</span>
+                     </div>
+                     <div class="close-circle">
+                        <a (click)="removeItem(item)"><i class="material-icons">
+                            delete
+                            </i></a>
+                      </div>
+              </div>
+              <mat-divider></mat-divider>
+              <div class="total" fxLayout="row" fxLayoutAlign="space-between center">
+                  <p class="text-muted">Subtotal: </p>
+                  <span>{{ getTotal() | async | currency:productService?.currency:'symbol' }}</span>
+                </div>
+            </div>
+      </div>
+ </mat-menu>
+  </div>
+

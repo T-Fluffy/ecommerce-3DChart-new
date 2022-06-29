@@ -1,0 +1,114 @@
+<div class="carousel-2">
+  <div class="container ctn-box">
+    <div class="" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+      <div
+        class="slider-categories"
+        fxFlex="100"
+        fxFlex.gt-md="25"
+        fxFlex.md="40"
+      >
+        <div class="categories-wrap">
+          <div class="title">TOP CATEGORIES</div>
+          <app-categories></app-categories>
+          <div class="btn-sale">
+            <button mat-raised-button color="primary">
+              USE THE DISCOUNT - 60% OFF
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="carousel-2-wrapper"
+        fxLayout.sm="column"
+        fxFlex="100"
+        fxFlex.gt-md="75"
+        fxFlex.md="60"
+        fxFlex.sm="100"
+      >
+        <app-main-carousel [slides]="slides"></app-main-carousel>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="home-2-wrap">
+  <div class="info-bar2-wrap">
+    <div class="container">
+      <div fxLayout="row wrap" class="info-bar">
+        <div class="card-wrap" fxFlex="100" fxFlex.gt-md="25" fxFlex.gt-xs="50">
+          <mat-card
+            class="light-block"
+            fxLayout="row"
+            fxLayoutAlign="start center"
+          >
+            <mat-icon class="mat-icon-xlg m-0">card_giftcard</mat-icon>
+            <div class="content">
+              <p>BONUS PLUS</p>
+              <span class="text-muted m-0"
+                >Get a bonus plus for buying more that three products</span
+              >
+            </div>
+          </mat-card>
+        </div>
+        <div class="card-wrap" fxFlex="100" fxFlex.gt-md="25" fxFlex.gt-xs="50">
+          <mat-card
+            class="light-block"
+            fxLayout="row"
+            fxLayoutAlign="start center"
+          >
+            <mat-icon class="mat-icon-xlg m-0">monetization_on</mat-icon>
+            <div class="content">
+              <p>MONEY BACK GUARANTEE</p>
+              <span class="text-muted m-0">100% money back guarantee</span>
+            </div>
+          </mat-card>
+        </div>
+        <div class="card-wrap" fxFlex="100" fxFlex.gt-md="25" fxFlex.gt-xs="50">
+          <mat-card
+            class="light-block"
+            fxLayout="row"
+            fxLayoutAlign="start center"
+          >
+            <mat-icon class="mat-icon-xlg m-0">history</mat-icon>
+            <div class="content">
+              <p>ONLINE SUPPORT 24/7</p>
+              <span class="text-muted m-0">Call us: 02 3555 65454 55</span>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="products sec-padding">
+    <div class="container">
+      <mat-tab-group>
+        <mat-tab label="FEATURED PRODUCTS">
+          <app-product-carousel-two
+            [product]="products | slice: 0:5"
+          ></app-product-carousel-two>
+        </mat-tab>
+
+        <mat-tab label="LATEST PRODUCTS">
+          <app-product-carousel-two
+            [product]="products | slice: 5:13"
+          ></app-product-carousel-two>
+        </mat-tab>
+
+        <mat-tab label="ON SALE PRODUCTS">
+          <app-product-carousel-two
+            [product]="products | slice: 13:22"
+          ></app-product-carousel-two>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+  <div class="banners-wrap">
+    <div class="container">
+      <app-banners [banners]="banners"></app-banners>
+    </div>
+  </div>
+  <div class="products-vertical-wrap">
+    <div class="container">
+      <app-product-vertical [products]="products"></app-product-vertical>
+    </div>
+  </div>
+</div>

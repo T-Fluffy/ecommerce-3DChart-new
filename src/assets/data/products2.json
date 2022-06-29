@@ -1,0 +1,62 @@
+[{
+  "id": 1,
+  "name": "TANK",
+  "price": 175,
+  "salePrice": 195,
+  "discount": 30,
+  "pictures": [
+    {
+      "small": "assets/images/product/TANK.png",
+      "big": "assets/images/product/TANK.png"
+  }
+  ],
+  "shortDetails": "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  "stock": 5,
+  
+  "newPro": true,
+  "sale": true,
+  "category": "3DModels",
+  "tags": ["blender", "Maya", "3DsMx"]
+},
+{
+  "id": 2,
+  "name": "Cannon 3D Model",
+  "price": 235,
+  "salePrice": 200,
+  "discount": 40,
+  "pictures": [
+    {
+      "small": "assets/images/product/Cannon.png",
+      "big": "assets/images/product/Cannon.png"
+  }
+  ],
+  "shortDetails": "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  "stock": 5,
+  
+  "newPro": true,
+  "sale": true,
+  "category": "3DModels"
+},
+{
+  "id": 3,
+  "name": "Red Sword",
+  "price": 350,
+  "salePrice": 200,
+  "discount": 50,
+  "pictures": [
+    {
+      "small": "assets/images/product/soward.png",
+      "big": "assets/images/product/soward.png"
+  }
+  ],
+  "shortDetails": "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem,",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  "stock": 5,
+  
+  "newPro": true,
+  "sale": true,
+  "category": "3DModels"
+}
+]

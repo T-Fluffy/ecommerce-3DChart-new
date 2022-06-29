@@ -1,0 +1,60 @@
+<div class="home-header-4">
+  <div
+    class="container"
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutGap="20px"
+    fxlayoutalign="space-between center"
+  >
+    <div class="logo">
+      <a [routerLink]="['/home/one']" routerLinkActive="router-link-active"
+        ><h1>3DChart</h1>
+      </a>
+    </div>
+    <div fxflexoffset.gt-sm="10" fxFlex class="search-form">
+      <form class="search-form" fxLayout="row">
+        <div class="form-wrap">
+          <input type="text" placeholder="Type to search..." />
+          <button class="btn-search" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+    <div
+      class="call-bucket-wrap"
+      fxLayout="row"
+      fxLayout.sm="row"
+      fxLayoutAlign="center center"
+    >
+      <div
+        class="info-message-icon"
+        fxLayout="row"
+        fxLayoutAlign="center center"
+      >
+        <div class="icon" fxLayout="row">
+          <mat-icon class="mat-icon-lg mat-icon material-icons">call</mat-icon>
+        </div>
+        <div class="info-text">
+          <p>Helpline:</p>
+          <span>02(981)336 111</span>
+        </div>
+      </div>
+      <div
+        class="main-menu-wrapper-2"
+        fxLayout="row"
+        fxLayoutAlign="space-between center"
+      >
+        <mat-toolbar class="top-navbar top menu">
+          <app-shopping-widgets
+            [shoppingCartItems]="shoppingCartItems"
+          ></app-shopping-widgets>
+        </mat-toolbar>
+      </div>
+    </div>
+  </div>
+</div>
+<div fxShow="false" fxShow.gt-sm class="menu-container5">
+  <app-menu></app-menu>
+</div>
